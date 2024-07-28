@@ -1,59 +1,23 @@
 # Daily Expenses Sharing Application
 
-## Setup Instructions
+## Overview
+This is a backend service for a daily-expenses sharing application. The application allows users to add expenses and split them based on three different methods: exact amounts, percentages, and equal splits. It manages user details, validates inputs, and generates downloadable balance sheets.
 
-1. Clone the repository
+## Features
+- User Management: Create and manage users with email, name, and mobile number.
+- Expense Management: Add and manage expenses.
+  - Equal: Split expenses equally among all participants.
+  - Exact: Specify the exact amount each participant owes.
+  - Percentage: Specify the percentage each participant owes.
+- Balance Sheet: View individual and overall expenses and download balance sheets.
 
-2. Install dependencies
+## Requirements
+- Node.js
+- MongoDB
 
-3. Create a `.env` file in the root directory with the following content:
+## Setup and Installation
 
-4. Start the server
-
-5. The server will run on `http://localhost:5000`
-
-## API Endpoints
-
-### User Endpoints
-
-- Create User
-- `POST /users/create`
-- Request Body:
- ```json
- {
-   "name": "John Doe",
-   "email": "john.doe@example.com",
-   "mobile": "1234567890"
- }
- ```
-
-- Retrieve User Details
-- `GET /users/:id`
-
-### Expense Endpoints
-
-- Add Expense
-- `POST /expenses/create`
-- Request Body:
- ```json
- {
-   "description": "Dinner",
-   "amount": 3000,
-   "paidBy": "user_id",
-   "splitMethod": "equal",
-   "participants": [
-     { "user": "user_id_1" },
-     { "user": "user_id_2" },
-     { "user": "user_id_3" }
-   ]
- }
- ```
-
-- Retrieve Individual User Expenses
-- `GET /expenses/user/:userId`
-
-- Retrieve Overall Expenses
-- `GET /expenses/all`
-
-- Download Balance Sheet
-- `GET /expenses/balance-sheet`
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd daily-expenses-app
